@@ -4,23 +4,26 @@
   box-sizing: border-box;
 }
 .container {
+  max-width: 40vw;
+  aspect-ratio: 1;
+  margin: 20px auto;
+  background-color: rgb(223, 203, 203);
   border: 1px solid #000;
   display: flex;
-  flex: 0 0 10px;
-  max-width: 50vmin;
-  max-height: 50vmin;
   flex-wrap: wrap;
+}
+
+.div {
+  border: 1px solid brown;
+  width: 1%;
+  aspect-ratio: 1;
+}
+
+.black {
+  background-color: black;
+}
+
+.form {
   text-align: center;
-  margin: 15px auto;
-}
-
-.container > div {
-  border: 1px solid #000;
-  width: 6.25%;
-  height: 30px;
-  padding-top: 10px;
-}
-
-.container > .red {
-  background-color: red;
+  margin-top: 15px;
 }

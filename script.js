@@ -1,21 +1,26 @@
-function grid(c) {
-  let gridWidth = 100 / c;
-  for (let i = 0; i < c; i++) {
-    for (let j = 0; j < c; j++) {
-      let grid = document.createElement("div");
-      grid.style.width = gridWidth + "%";
-      grid.style.height = gridWidth + "%";
+const container = document.querySelector(".container");
+const gridNumber = document.querySelector("input");
+const makeGridBtn = document.querySelector("button");
 
-      document.querySelector(".container").appendChild(grid);
+function createGrid(cellNumber) {
+  for (let i = 0; i < cellNumber; i++) {
+    for (let j = 0; j < cellNumber; j++) {
+      let divWidth = 100 / cellNumber;
+      let div = document.createElement("div");
+      div.classList.add("div");
+      div.style.width = divWidth + "%";
+      container.appendChild(div);
     }
   }
 }
-grid(100);
 
-const divs = document.querySelectorAll("div");
+makeGridBtn.addEventListener("click", () => {
+  createGrid(gridNumber.value);
+  const indDiv = document.querySelectorAll(".div");
 
-divs.forEach((div) => {
-  div.addEventListener("mouseenter", () => {
-    div.classList.add("red");
+  indDiv.forEach((cell) => {
+    cell.addEventListener("mouseover", () => {
+      cell.classList.add("black");
+    });
   });
 });
