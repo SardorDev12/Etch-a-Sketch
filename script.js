@@ -1,6 +1,7 @@
 const container = document.querySelector(".container");
 const gridNumber = document.querySelector("input");
 const makeGridBtn = document.querySelector("button");
+const clearBtn = document.querySelector(".clear");
 
 function createGrid(cellNumber) {
   for (let i = 0; i < cellNumber; i++) {
@@ -23,4 +24,8 @@ makeGridBtn.addEventListener("click", () => {
       cell.classList.add("black");
     });
   });
+});
+
+clearBtn.addEventListener("click", () => {
+  container.innerHTML = "";
 });
